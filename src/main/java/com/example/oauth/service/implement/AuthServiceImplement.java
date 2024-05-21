@@ -33,7 +33,6 @@ public class AuthServiceImplement implements AuthService {
     public ResponseEntity<? super IdCheckResponseDto> idCheck(IdCheckRequestDto dto) {
 
         try {
-
             String userId = dto.getId();
             boolean isExistId = userRepository.existsByUserId(userId);
             if (isExistId) return IdCheckResponseDto.duplicateId();
